@@ -1,0 +1,152 @@
+// These arguments were used when this file was generated. They will be automatically applied on subsequent loads 
+// via the GUI or CLI invocations. Run CLI with '--help' for additional information on how to override these arguments.
+// @cliArgs --device "CC1352P1F3RGZ" --package "RGZ" --part "Default" --product "simplelink_cc13x2_26x2_sdk@3.40.00.02"
+// @versions {"data":"2019103101","timestamp":"2019103101","tool":"1.3.1030","templates":"2019103101"}
+
+var RTOS = scripting.addModule("/ti/drivers/RTOS");
+var GPIO = scripting.addModule("/ti/drivers/GPIO");
+var GPIO1 = GPIO.addInstance();
+var GPIO2 = GPIO.addInstance();
+var GPIO3 = GPIO.addInstance();
+var GPIO4 = GPIO.addInstance();
+var GPIO5 = GPIO.addInstance();
+var SPI = scripting.addModule("/ti/drivers/SPI", {}, false);
+var SPI1 = SPI.addInstance();
+var custom = scripting.addModule("/ti/devices/radioconfig/custom");
+var GPIO6 = GPIO.addInstance();
+var GPIO7 = GPIO.addInstance();
+var Power = scripting.addModule("/ti/drivers/Power", {}, false);
+var CCFG = scripting.addModule("/ti/devices/CCFG", {}, false);
+// Name
+CCFG.ccfgTemplate.$name = "ti_devices_CCFGTemplate0";
+var Board = scripting.addModule("/ti/drivers/Board", {}, false);
+var DriverLib = scripting.addModule("/ti/devices/DriverLib", {}, false);
+// Mode - Select the GPIO mode
+GPIO1.mode = "Output";
+// Initial Output State - Specifies the initial output state
+GPIO1.initialOutputState = "High";
+// Name - The C/C++ identifier used in applications as the index parameter passed to GPIO runtime APIs
+GPIO1.$name = "GPIO_LED_RED";
+// Assign pin
+GPIO1.gpioPin.$assign = "DIO_5"; // pin number - 10
+// Name
+GPIO1.pinInstance.$name = "CONFIG_PIN_0";
+// Output State - Initial Output State
+GPIO1.pinInstance.outputState = "Low";
+// Mode - Select the GPIO mode
+GPIO2.mode = "Output";
+// Initial Output State - Specifies the initial output state
+GPIO2.initialOutputState = "High";
+// Name - The C/C++ identifier used in applications as the index parameter passed to GPIO runtime APIs
+GPIO2.$name = "GPIO_LED_GREEN_LEFT";
+// Name
+GPIO2.pinInstance.$name = "CONFIG_PIN_1";
+// Output State - Initial Output State
+GPIO2.pinInstance.outputState = "Low";
+// Mode - Select the GPIO mode
+GPIO3.mode = "Output";
+// Initial Output State - Specifies the initial output state
+GPIO3.initialOutputState = "High";
+// Name - The C/C++ identifier used in applications as the index parameter passed to GPIO runtime APIs
+GPIO3.$name = "GPIO_LED_GREEN_RIGHT";
+// Assign pin
+GPIO3.gpioPin.$assign = "DIO_7"; // pin number - 12
+// Name
+GPIO3.pinInstance.$name = "CONFIG_PIN_2";
+// Output State - Initial Output State
+GPIO3.pinInstance.outputState = "Low";
+// Name - The C/C++ identifier used in applications as the index parameter passed to GPIO runtime APIs
+GPIO4.$name = "GPIO_PIN_DEBUG";
+// Mode - Select the GPIO mode
+GPIO4.mode = "Output";
+// Assign pin
+GPIO4.gpioPin.$assign = "DIO_20"; // pin number - 30
+// Name
+GPIO4.pinInstance.$name = "CONFIG_PIN_7";
+// Name - The C/C++ identifier used in applications as the index parameter passed to GPIO runtime APIs
+GPIO5.$name = "GPIO_PIN_INTR";
+// Mode - Select the GPIO mode
+GPIO5.mode = "Output";
+// Assign pin
+GPIO5.gpioPin.$assign = "DIO_16"; // pin number - 26
+// Name
+GPIO5.pinInstance.$name = "CONFIG_PIN_8";
+var DMA = scripting.addModule("/ti/drivers/DMA", {}, false);
+// Name - The C/C++ identifier used in applications as the index parameter passed to SPI runtime APIs
+SPI1.$name = "CONFIG_SPI_0";
+// Mode - In three pin mode the SS signal is not used.
+SPI1.mode = "Four Pin SS Active Low";
+// Name
+SPI1.sclkPinInstance.$name = "CONFIG_PIN_3";
+// Name
+SPI1.misoPinInstance.$name = "CONFIG_PIN_4";
+// Name
+SPI1.mosiPinInstance.$name = "CONFIG_PIN_5";
+// Name
+SPI1.spi.$name = "MySSI1";
+// Assign pin
+SPI1.spi.sclkPin.$assign = "DIO_23"; // pin number - 36
+// Assign pin
+SPI1.spi.misoPin.$assign = "DIO_25"; // pin number - 38
+// Assign pin
+SPI1.spi.mosiPin.$assign = "DIO_24"; // pin number - 37
+// Assign pin
+SPI1.spi.ssPin.$assign = "DIO_26"; // pin number - 39
+// Name
+SPI1.ssPinInstance.$name = "CONFIG_PIN_6";
+// Proprietary (779 - 930 MHz) - Select PHY settings to be included in the generated code
+custom.prop8 = ["2gfsk50kbps"];
+var multi_stack_validate = scripting.addModule("/ti/easylink/multi_stack_validate", {}, false);
+// Name
+custom.radioConfig2gfsk50kbps.$name = "ti_devices_radioconfig_settings_prop0";
+// Name
+custom.radioConfig2gfsk50kbps.codeExportConfig.$name = "ti_devices_radioconfig_code_export_param0";
+// Symbol Name Generation Method
+custom.radioConfig2gfsk50kbps.codeExportConfig.symGenMethod = "Legacy";
+var RF = scripting.addModule("/ti/drivers/RF", {}, false);
+// RF Pin Selection - Selects which pins are used by RF frontend
+RF.pinSelection = ["DIO_10","DIO_11","DIO_9"];
+// DIO_9
+RF.DIO_9 = "GPIO_PIN_SUB1GHZ";
+// DIO_10
+RF.DIO_10 = "GPIO_PIN_2G4";
+// DIO_11
+RF.DIO_11 = "GPIO_PIN_RF_PA";
+// Global Callback Function
+RF.globalCallbackFunction = "";
+// Output State - Initial Output State
+RF.pinInstance2.outputState = "High";
+// Output State - Initial Output State
+RF.pinInstance0.outputState = "High";
+// Output State - Initial Output State
+RF.pinInstance1.outputState = "High";
+// Name - The C/C++ identifier used in applications as the index parameter passed to GPIO runtime APIs
+GPIO6.$name = "GPIO_PIN_DEBUG2";
+// Mode - Select the GPIO mode
+GPIO6.mode = "Output";
+// Assign pin
+GPIO6.gpioPin.$assign = "DIO_19"; // pin number - 29
+// Name
+GPIO6.pinInstance.$name = "CONFIG_PIN_9";
+// Name - The C/C++ identifier used in applications as the index parameter passed to GPIO runtime APIs
+GPIO7.$name = "GPIO_PIN_DEBUG3";
+// Mode - Select the GPIO mode
+GPIO7.mode = "Output";
+// Assign pin
+GPIO7.gpioPin.$assign = "DIO_18"; // pin number - 28
+// Name
+GPIO7.pinInstance.$name = "CONFIG_PIN_10";
+// Suggest solution
+GPIO2.gpioPin.$suggestSolution = "11";
+// Suggest solution
+SPI1.spi.$suggestSolution = "SSI0";
+// Suggest solution
+SPI1.spi.dmaRxChannel.$suggestSolution = "DMA_CH3";
+// Suggest solution
+SPI1.spi.dmaTxChannel.$suggestSolution = "DMA_CH4";
+// Suggest solution
+RF.rfAntennaPin0.$suggestSolution = "14";
+// Suggest solution
+RF.rfAntennaPin1.$suggestSolution = "15";
+// Suggest solution
+RF.rfAntennaPin2.$suggestSolution = "16";
