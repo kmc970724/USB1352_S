@@ -5,6 +5,12 @@
 #include "RF/usb1352_rf.h"
 #include "RF/usb1352_amp.h"
 
+void usb1352_interrupt(void)
+{
+    GPIO_write(GPIO_PIN_INTR, 1);
+    GPIO_write(GPIO_PIN_INTR, 0);
+}
+
 int main(void)
 {
     Board_init();

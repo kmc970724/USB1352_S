@@ -6,7 +6,6 @@ static Task_Struct      intr_task_struct;
 static uint8_t          intr_task_stack[INTR_TASK_STACK_SIZE];
 
 static void usb1352_intr_thread(void* pArg);
-static void usb1352_interrupt(void);
 
 void usb1352_intr_thread_init(sub1ghz_dev* my_dev)
 {
@@ -37,10 +36,4 @@ static void usb1352_intr_thread(void* pArg)
 //            Task_sleep(Clock_convertMsToTicks(5));
         }
     }
-}
-
-static void usb1352_interrupt(void)
-{
-    GPIO_write(GPIO_PIN_INTR, 1);
-    GPIO_write(GPIO_PIN_INTR, 0);
 }

@@ -167,4 +167,6 @@ void usb1352_transfer_to_host(sub1ghz_dev* my_dev, uint8_t tx_seq, uint8_t rx_se
     Semaphore_pend(my_dev->spi_rx_sema_handle, BIOS_WAIT_FOREVER);
     queue_insert(my_dev->rf_data_rx_queue, &spi_frame);
     Semaphore_post(my_dev->spi_rx_sema_handle);
+
+    usb1352_interrupt();
 }

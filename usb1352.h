@@ -38,4 +38,6 @@ typedef struct sub1ghz_dev
     SPI_Handle spi_handle;
 } sub1ghz_dev;
 
+void usb1352_interrupt(void);
+
 #endif
