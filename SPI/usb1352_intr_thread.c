@@ -25,7 +25,6 @@ static void usb1352_intr_thread(void* pArg)
 
     while (1)
     {
-        if (Event_pend(my_dev->intr_event, usb1352_event_intr, NULL, Clock_convertUsToTicks(5000)) == 0)
         {
             if (!(queue_empty(my_dev->rf_data_rx_queue)))
             {
@@ -33,7 +32,7 @@ static void usb1352_intr_thread(void* pArg)
 
                 usb1352_interrupt();
             }
-//            Task_sleep(Clock_convertMsToTicks(5));
+            Task_sleep(Clock_convertMsToTicks(50));
         }
     }
 }
