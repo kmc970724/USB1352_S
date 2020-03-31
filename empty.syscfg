@@ -99,6 +99,8 @@ custom.prop8 = ["2gfsk50kbps"];
 var multi_stack_validate = scripting.addModule("/ti/easylink/multi_stack_validate", {}, false);
 // Name
 custom.radioConfig2gfsk50kbps.$name = "ti_devices_radioconfig_settings_prop0";
+// Frequency (MHz) - Frequency.
+custom.radioConfig2gfsk50kbps.carrierFrequency = 923.0000;
 // Name
 custom.radioConfig2gfsk50kbps.codeExportConfig.$name = "ti_devices_radioconfig_code_export_param0";
 // Symbol Name Generation Method

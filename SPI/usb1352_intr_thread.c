@@ -25,14 +25,12 @@ static void usb1352_intr_thread(void* pArg)
 
     while (1)
     {
+        if (!(queue_empty(my_dev->rf_data_rx_queue)))
         {
-            if (!(queue_empty(my_dev->rf_data_rx_queue)))
-            {
-//                SPI_transferCancel(my_dev->spi_handle);
+//          SPI_transferCancel(my_dev->spi_handle);
 
-                usb1352_interrupt();
-            }
-            Task_sleep(Clock_convertMsToTicks(50));
+            usb1352_interrupt();
         }
+        Task_sleep(Clock_convertMsToTicks(50));
     }
 }

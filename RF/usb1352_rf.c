@@ -88,7 +88,7 @@ void usb1352_rf_thread(void* pArg)
                 i_frame.length = spi_frame.length;
                 memcpy(i_frame.payload, spi_frame.payload, i_frame.length);
 
-                Task_sleep(Clock_convertUsToTicks(500));
+                Task_sleep(Clock_convertUsToTicks(1000));
                 usb1352_rf_transfer(&i_frame, I_FRAME_, 0xFF);
                 tx_data_frame_flag = 1;
                 if (rx_data_frame_flag == 1)
@@ -102,7 +102,7 @@ void usb1352_rf_thread(void* pArg)
                 {
                     rx_data_frame_flag = 0;
                     s_frame.fc.rx_seq = rx_seq;
-                    Task_sleep(Clock_convertUsToTicks(500));
+                    Task_sleep(Clock_convertUsToTicks(1000));
                     if (MAX_QUEUE_SIZE - my_dev->rf_data_rx_queue->size < 3)
                     {
                         usb1352_rf_transfer(&s_frame, S_FRAME_RNR, 0xFF);
